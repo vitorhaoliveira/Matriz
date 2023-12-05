@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>Ex 3</h1>
+
+    <script>
+        let c = 1;
+        let media = 0;
+        let media2 = 0;
+        let coluna = [];
+        for (let i = 0; i < 100; i++) {
+            coluna[i] = [];
+            coluna[i][0] = Number(prompt("Digite o " + c + "º número da matricula: "));
+            while (coluna[i][0] % 1 != 0 || coluna[i][0] < 1) {
+                alert("Número de Matricula inválido");
+                coluna[i][0] = Number(prompt("Digite o " + c + "º número da matricula: "));
+            }
+            coluna[i][1] = Number(prompt("Digite a " + c + "ª média final"));
+            while (isNaN(coluna[i][1])) {
+                alert("Número da média final inválido");
+                coluna[i][1] = Number(prompt("Digite a " + c + "ª média final"));
+            }
+            media += coluna[i][1]
+            coluna[i][2] = Number(prompt("Digite a " + c + "ª porcentagem de frequência"));
+            while (isNaN(coluna[i][2])) {
+                alert("Número da porcentagem de frequência inválido");
+                coluna[i][2] = Number(prompt("Digite a " + c + "ª porcentagem de frequência"));
+            }
+            media2 += coluna[i][2]
+            c++
+
+        }
+        coluna[5] = [];
+        coluna[5][0] = 100;
+        coluna[5][1] = media / 100;
+        coluna[5][2] = media2 / 100;
+        alert(coluna);
+
+    </script>
+</body>
+</html>
